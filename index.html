@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="some.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Pokédex</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" data-require-login="false">Home</a></li>
+                <li><a href="#" data-require-login="true">Pokémon List</a></li>
+                <li><a href="#" data-require-login="true">Trainer Profile</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-require-login="true">Filter Type <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="filterType('all')">All</a></li>
+                        <li><a href="#" onclick="filterType('grass')">Grass</a></li>
+                        <li><a href="#" onclick="filterType('fire')">Fire</a></li>
+                        <li><a href="#" onclick="filterType('water')">Water</a></li>
+                        <li><a href="#" onclick="filterType('electric')">Electric</a></li>
+                        <li><a href="#" onclick="filterType('psychic')">Psychic</a></li>
+                        <li><a href="#" onclick="filterType('dragon')">Dragon</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="auth-nav">
+                <li><a href="#" id="signUpBtn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#" id="loginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+
+    <div class="content">
+        <img src="logo.png" alt="pokedex" class="pokedex-logo">
+        <div id="list"></div>
+        <div id="not-logged-in" class="not-logged-in">
+            <p>Please <a href="#" id="loginPrompt">login</a> to view Pokémon!</p>
+        </div>
+        <div class="load-more">
+            <button id="loadMoreBtn">Load More Pokémon</button>
+        </div>
+    </div>
+
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+                <input type="text" id="signUpUsername" placeholder="Username" required>
+                <input type="password" id="signUpPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="FpLlm58JY2xnANt_Pokemon Room_6_170756.mp4" type="video/mp4">
+    </video>
+
+    <script src="home.js"></script>
+</body>
+</html>

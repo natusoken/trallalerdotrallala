@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+       
+        <div class="pokedex-lights">
+            <div class="light main-light"></div>
+            <div class="light small-light red"></div>
+            <div class="light small-light yellow"></div>
+            <div class="light small-light green"></div>
+        </div>
+        <div class="hinge"></div>
+       
+        <div class="pokedex-content">
+           
+            <div class="left-panel">
+                <h1 id="pokemonName" class="pokemon-name"></h1>
+                <div class="pokemon">
+                    <img id="pokemonImage" src="" alt="Pokémon Image">
+                    <div class="pokemon-stats">
+                        <p>Height: <span id="pokemonHeight"></span> m</p>
+                        <p>Weight: <span id="pokemonWeight"></span> kg</p>
+                        <p>Base Exp: <span id="pokemonBaseExp"></span></p>
+                        <p>Pokédex ID: <span id="pokemonId"></span></p>
+                        <p>Capture Rate: <span id="pokemonCaptureRate"></span></p>
+                        <p>Gender: <span id="pokemonGender"></span></p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="pokedex-button" onclick="changePokemon(-1)">◄</button>
+                    <button class="pokedex-button" onclick="changePokemon(1)">►</button>
+                </div>
+            </div>
+           
+            <div class="right-panel">
+                <div class="details">
+                    <h3>Description:</h3>
+                    <p id="pokemonDescription"></p>
+                    <h3>Habitat:</h3>
+                    <p id="pokemonHabitat"></p>
+                    <h3>Types:</h3>
+                    <div id="pokemonTypes"></div>
+                    <h3>Type Effectiveness:</h3>
+                    <div id="pokemonTypeEffect"></div>
+                    <h3>Abilities:</h3>
+                    <div id="pokemonAbilities"></div>
+                    <h3>Moves:</h3>
+                    <div id="pokemonMoves"></div>
+                    <h3>Stats:</h3>
+                    <div id="pokemonStats"></div>
+                    <h3>Species:</h3>
+                    <p id="pokemonSpecies"></p>
+                    <h3>Evolution:</h3>
+                    <div id="pokemonEvolution"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="abilityModal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2 id="abilityName"></h2>
+            <p id="abilityDescription"></p>
+        </div>
+    </div>
+    
+
+    <script src="pokemon.js"></script>
+</body>
+</html>
